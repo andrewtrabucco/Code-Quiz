@@ -1,0 +1,99 @@
+/* psuedo-element so generated content position comes before the element content position */
+*, *::before, *::after  {
+    box-sizing: border-box;
+    font-family: Gothic Medium;
+}
+
+/* Sets root(<html> in this case colors for neutral, wrong and correct*/
+:root    {
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+
+/* Sets style of entire body*/
+body    {
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center; 
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+
+/* Changes .correct to body style*/
+body.correct    {
+    --hue: var(--hue-correct);  
+}
+
+/* Changes .wrong to body style*/
+body.wrong  {
+    --hue: var(--hue-wrong);
+}
+
+/* Sets container style for content within*/
+.container  {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+
+/* Sets orientation of buttons on grid*/
+.btn-grid   {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px;
+}
+
+/* Sets style of .btn class*/
+.btn    {
+    --hue: var(--hue-neutral);
+    border: 1 px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 30%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+/* Sets mouse hover color*/
+.btn:hover  {
+    border-color: black;
+}
+
+/* Changes .correct class to .btn class*/
+ .btn.correct   {
+     --hue: var(--hue-correct);
+     color: black
+}
+
+/* Changes .wrong class to .btn*/
+.btn.wrong {
+    --hue: var(--hue-wrong)
+}
+
+/* Sets style of start button and next button*/
+.start-btn, .next-btn   {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+/* Configures layout of controls*/
+.controls   {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* When .hide class selected the display is set to none*/
+.hide   {
+    display: none;
+}
